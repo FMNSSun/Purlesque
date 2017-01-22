@@ -1,0 +1,33 @@
+#
+# Tests for built-ins only!
+#
+
+main
+  # Don't remove these two checks.
+  0 &fail ifcall
+  1 &fail ifncall
+
+  # Test if function is called. Don't remove this either.
+  foo 5 equ &fail ifncall
+
+  # Call test cases here
+
+
+
+  # ...
+
+  # Dump -42 on success.
+  -42 dump
+  
+  1 2 &add execute dump
+;
+
+
+assert_equals
+  equ &fail ifncall
+;
+
+
+foo
+ 5
+;
